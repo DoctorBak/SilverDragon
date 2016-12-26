@@ -202,6 +202,9 @@ function SilverDragon:Announce(name, dead)
 			self:Print(string.format(L["%s seen!"], name), dead and L["(it's dead)"] or '')
 		end
 		
+		PlaySound("RaidWarning")
+		TargetByName(name, true)
+		
 		self.lastseen[name] = time()
 		return true
 	end
